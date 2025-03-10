@@ -1,2 +1,5 @@
 # تجاهل ملف .env حتى لا يتم رفعه إلى GitHub
 .env
+chroma_db/
+pdf_store/
+chat_logs/
