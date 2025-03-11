@@ -1,0 +1,10 @@
+[
+    {
+        "role": "user",
+        "content": "tell me joke"
+    },
+    {
+        "role": "assistant",
+        "content": "Sure! Here's one for you:\n\nWhy don't skeletons fight each other?\n\nThey don't have the guts!"
+    }
+]

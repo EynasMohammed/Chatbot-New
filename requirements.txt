@@ -5,3 +5,8 @@ fastapi
 uvicorn 
 pydantic
  requests
+fastapi
+uvicorn
+pydantic
+requests
+psycopg2-binary
