@@ -2,4 +2,4 @@
 .env
 chroma_db/
 pdf_store/
-chat_logs/
+#chat_logs/

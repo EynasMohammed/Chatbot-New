@@ -186,3 +186,10 @@
 [32mINFO[0m:     [18-03-2025 21:35:28] Waiting for application startup.
 [32mINFO[0m:     [18-03-2025 21:35:28] Application startup complete.
 [32mINFO[0m:     [18-03-2025 21:35:28] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39800 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39801 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39801 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [18-03-2025 21:35:40] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39800 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [18-03-2025 21:35:40] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39800 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
