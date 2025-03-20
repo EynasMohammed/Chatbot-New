@@ -1,0 +1,10 @@
+[
+    {
+        "role": "user",
+        "content": "10"
+    },
+    {
+        "role": "assistant",
+        "content": "I'm sorry, but I don't have enough information to provide a relevant answer to the number \"10\" without context."
+    }
+]
