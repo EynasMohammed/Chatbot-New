@@ -1,0 +1,232 @@
+[33mWARNING[0m:  [04-03-2025 23:14:37] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [04-03-2025 23:14:39] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component System
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component SqliteDB
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component Posthog
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component LocalExecutor
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component SegmentAPI
+[36mDEBUG[0m:    [04-03-2025 23:14:39] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [04-03-2025 23:14:39] Started server process [[36m8376[0m]
+[32mINFO[0m:     [04-03-2025 23:14:39] Waiting for application startup.
+[32mINFO[0m:     [04-03-2025 23:14:39] Application startup complete.
+[32mINFO[0m:     [04-03-2025 23:14:39] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [04-03-2025 23:55:31] ::1:51198 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2025 23:55:31] ::1:51199 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2025 23:55:31] ::1:51199 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2025 23:55:31] ::1:51198 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [04-03-2025 23:55:31] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [04-03-2025 23:55:31] ::1:51198 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [04-03-2025 23:55:44] ::1:51204 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [04-03-2025 23:55:44] ::1:51204 - "GET /favicon.ico HTTP/1.1" 404
+[32mINFO[0m:     [04-03-2025 23:55:47] ::1:51204 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [04-03-2025 23:55:48] ::1:51204 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [04-03-2025 23:56:04] Shutting down
+[32mINFO[0m:     [04-03-2025 23:56:04] Waiting for application shutdown.
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component System
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component SegmentAPI
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component LocalExecutor
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component Posthog
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component SqliteDB
+[36mDEBUG[0m:    [04-03-2025 23:56:04] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [04-03-2025 23:56:04] Application shutdown complete.
+[32mINFO[0m:     [04-03-2025 23:56:04] Finished server process [[36m8376[0m]
+[33mWARNING[0m:  [05-03-2025 01:50:30] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [05-03-2025 01:50:30] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component System
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component SqliteDB
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component Posthog
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component LocalExecutor
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component SegmentAPI
+[36mDEBUG[0m:    [05-03-2025 01:50:30] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [05-03-2025 01:50:30] Started server process [[36m14424[0m]
+[32mINFO[0m:     [05-03-2025 01:50:30] Waiting for application startup.
+[32mINFO[0m:     [05-03-2025 01:50:30] Application startup complete.
+[32mINFO[0m:     [05-03-2025 01:50:30] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [05-03-2025 01:51:34] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [05-03-2025 01:51:35] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component System
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component SqliteDB
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component Posthog
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component LocalExecutor
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component SegmentAPI
+[36mDEBUG[0m:    [05-03-2025 01:51:35] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [05-03-2025 01:51:35] Started server process [[36m6500[0m]
+[32mINFO[0m:     [05-03-2025 01:51:35] Waiting for application startup.
+[32mINFO[0m:     [05-03-2025 01:51:35] Application startup complete.
+[32mINFO[0m:     [05-03-2025 01:51:35] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [05-03-2025 01:51:37] Shutting down
+[32mINFO[0m:     [05-03-2025 01:51:38] Waiting for application shutdown.
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component System
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component SegmentAPI
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component LocalExecutor
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component Posthog
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component SqliteDB
+[36mDEBUG[0m:    [05-03-2025 01:51:38] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [05-03-2025 01:51:38] Application shutdown complete.
+[32mINFO[0m:     [05-03-2025 01:51:38] Finished server process [[36m6500[0m]
+[33mWARNING[0m:  [05-03-2025 01:53:58] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [05-03-2025 01:53:58] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component System
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component SqliteDB
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component Posthog
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component LocalExecutor
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component SegmentAPI
+[36mDEBUG[0m:    [05-03-2025 01:53:58] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [05-03-2025 01:53:59] Started server process [[36m2216[0m]
+[32mINFO[0m:     [05-03-2025 01:53:59] Waiting for application startup.
+[32mINFO[0m:     [05-03-2025 01:53:59] Application startup complete.
+[32mINFO[0m:     [05-03-2025 01:53:59] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [05-03-2025 01:54:19] ::1:50582 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [05-03-2025 01:54:20] ::1:50583 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [05-03-2025 01:54:20] ::1:50583 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [05-03-2025 01:54:20] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [05-03-2025 01:54:20] ::1:50582 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [05-03-2025 01:54:20] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [05-03-2025 01:54:20] ::1:50582 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [05-03-2025 01:59:42] ::1:50610 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [05-03-2025 01:59:42] ::1:50611 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [05-03-2025 01:59:42] ::1:50611 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [05-03-2025 01:59:42] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [05-03-2025 01:59:42] ::1:50610 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [05-03-2025 01:59:42] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [05-03-2025 01:59:42] ::1:50610 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[33mWARNING[0m:  [10-03-2025 15:10:50] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [10-03-2025 15:10:50] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component System
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component SqliteDB
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component Posthog
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component LocalExecutor
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component SegmentAPI
+[36mDEBUG[0m:    [10-03-2025 15:10:50] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [10-03-2025 15:10:50] Started server process [[36m14816[0m]
+[32mINFO[0m:     [10-03-2025 15:10:50] Waiting for application startup.
+[32mINFO[0m:     [10-03-2025 15:10:50] Application startup complete.
+[32mINFO[0m:     [10-03-2025 15:10:50] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [10-03-2025 15:11:40] ::1:58211 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2025 15:11:40] ::1:58212 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2025 15:11:40] ::1:58212 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [10-03-2025 15:11:40] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [10-03-2025 15:11:40] ::1:58211 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [10-03-2025 15:11:40] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [10-03-2025 15:11:40] ::1:58211 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2025 15:24:52] ::1:58267 - "GET /api/v2/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [10-03-2025 15:24:53] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [10-03-2025 15:24:53] ::1:58267 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/6f60f945-954a-481a-8ce4-cf09b2b716da/upsert HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2025 15:25:04] ::1:58277 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/6f60f945-954a-481a-8ce4-cf09b2b716da/query HTTP/1.1" 200
+[32mINFO[0m:     [10-03-2025 15:26:12] ::1:58289 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections/6f60f945-954a-481a-8ce4-cf09b2b716da/query HTTP/1.1" 200
+[33mWARNING[0m:  [18-03-2025 21:27:39] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [18-03-2025 21:27:39] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component System
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component SqliteDB
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component Posthog
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component LocalExecutor
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component SegmentAPI
+[36mDEBUG[0m:    [18-03-2025 21:27:39] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [18-03-2025 21:27:40] Started server process [[36m13096[0m]
+[32mINFO[0m:     [18-03-2025 21:27:40] Waiting for application startup.
+[32mINFO[0m:     [18-03-2025 21:27:40] Application startup complete.
+[31mERROR[0m:    [18-03-2025 21:27:40] [Errno 10048] error while attempting to bind on address ('127.0.0.1', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+[32mINFO[0m:     [18-03-2025 21:27:40] Waiting for application shutdown.
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component System
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component SegmentAPI
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component LocalExecutor
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component Posthog
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component SqliteDB
+[36mDEBUG[0m:    [18-03-2025 21:27:40] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [18-03-2025 21:27:40] Application shutdown complete.
+[33mWARNING[0m:  [18-03-2025 21:35:27] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [18-03-2025 21:35:28] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component System
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component SqliteDB
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component Posthog
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component LocalExecutor
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component SegmentAPI
+[36mDEBUG[0m:    [18-03-2025 21:35:28] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [18-03-2025 21:35:28] Started server process [[36m25356[0m]
+[32mINFO[0m:     [18-03-2025 21:35:28] Waiting for application startup.
+[32mINFO[0m:     [18-03-2025 21:35:28] Application startup complete.
+[32mINFO[0m:     [18-03-2025 21:35:28] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39800 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39801 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39801 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [18-03-2025 21:35:40] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39800 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [18-03-2025 21:35:40] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [18-03-2025 21:35:40] ::1:39800 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[32mINFO[0m:     [19-03-2025 01:35:22] Shutting down
+[32mINFO[0m:     [19-03-2025 01:35:22] Waiting for application shutdown.
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component System
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component SegmentAPI
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component LocalExecutor
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component SimpleAsyncRateLimitEnforcer
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component Posthog
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component SqliteDB
+[36mDEBUG[0m:    [19-03-2025 01:35:22] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [19-03-2025 01:35:22] Application shutdown complete.
+[32mINFO[0m:     [19-03-2025 01:35:22] Finished server process [[36m25356[0m]
+[33mWARNING[0m:  [19-03-2025 01:35:29] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [19-03-2025 01:35:29] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [19-03-2025 01:35:29] Starting component System
+[36mDEBUG[0m:    [19-03-2025 01:35:29] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [19-03-2025 01:35:29] Starting component SqliteDB
+[36mDEBUG[0m:    [19-03-2025 01:35:29] Starting component SimpleQuotaEnforcer
+[36mDEBUG[0m:    [19-03-2025 01:35:29] Starting component Posthog
+[36mDEBUG[0m:    [19-03-2025 01:35:30] Starting component SimpleRateLimitEnforcer
+[36mDEBUG[0m:    [19-03-2025 01:35:30] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [19-03-2025 01:35:30] Starting component LocalExecutor
+[36mDEBUG[0m:    [19-03-2025 01:35:30] Starting component SegmentAPI
+[36mDEBUG[0m:    [19-03-2025 01:35:30] Starting component SimpleAsyncRateLimitEnforcer
+[32mINFO[0m:     [19-03-2025 01:35:30] Started server process [[36m2364[0m]
+[32mINFO[0m:     [19-03-2025 01:35:30] Waiting for application startup.
+[32mINFO[0m:     [19-03-2025 01:35:30] Application startup complete.
+[32mINFO[0m:     [19-03-2025 01:35:30] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [19-03-2025 01:35:39] ::1:41095 - "GET /api/v2/auth/identity HTTP/1.1" 200
+[32mINFO[0m:     [19-03-2025 01:35:39] ::1:41096 - "GET /api/v2/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [19-03-2025 01:35:39] ::1:41096 - "GET /api/v2/tenants/default_tenant/databases/default_database HTTP/1.1" 200
+[36mDEBUG[0m:    [19-03-2025 01:35:39] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [19-03-2025 01:35:39] ::1:41095 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [19-03-2025 01:35:39] Collection langchain already exists, returning existing collection.
+[32mINFO[0m:     [19-03-2025 01:35:39] ::1:41095 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
