@@ -17,7 +17,7 @@ jobs:
     - name: Set Up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.9'
 
     - name: Install Dependencies
       run: |
@@ -37,4 +37,6 @@ jobs:
 
     - name: Run Tests
       run: |
+        source ~/miniconda3/etc/profile.d/conda.sh
+        conda activate project
         pytest tests/
