@@ -1,4 +1,4 @@
-name: Optimized Workflow
+name: Matrix Build for Python Versions
 
 on:
   push:
@@ -8,9 +8,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10]
+        python-version: [3.8, 3.9, 3.10]  # استبعدنا 3.7 لأنها غير مدعومة
+
     steps:
       - name: Check Out Code
         uses: actions/checkout@v3
@@ -27,14 +29,6 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Cache pip dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -44,4 +38,4 @@ jobs:
         run: pytest --collect-only
 
       - name: Run Tests
-        run: pytes
+        run: pytest
