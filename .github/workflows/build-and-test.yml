@@ -37,6 +37,4 @@ jobs:
 
     - name: Run Tests
       run: |
-        source ~/miniconda3/etc/profile.d/conda.sh
-        conda activate project
         pytest tests/
