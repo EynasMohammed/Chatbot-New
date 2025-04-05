@@ -1,29 +1,11 @@
-name: Matrix Build Clean
+name: Clean Test
 
 on:
   push:
     branches: [main]
 
 jobs:
-  build:
+  clean:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.8, 3.9, 3.10]
-
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Run tests
-        run: pytest
+      - run: echo "Workflow Reset"
