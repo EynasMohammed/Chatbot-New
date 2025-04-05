@@ -133,4 +133,3 @@ for service in chromadb backend frontend; do
 done
 
 echo "Setup completed successfully"
-Feel free to reach out if you encounter any issues or have suggestions for improvements!
