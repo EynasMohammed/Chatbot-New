@@ -26,7 +26,14 @@ jobs:
 
     - name: Run Build
       run: |
-        bash setup.sh ${{ secrets.PAT_TOKEN }} https://github.com/EynasMohammed/Chatbot-New.git main localhost chatbotdb azureadmin ${{ secrets.DB_PASSWORD }}
+        bash setup.sh \
+        "${{ secrets.PAT_TOKEN }}" \
+        "https://github.com/EynasMohammed/Chatbot-New.git" \
+        "main" \
+        "localhost" \
+        "chatbotdb" \
+        "azureadmin" \
+        "${{ secrets.DB_PASSWORD }}"
 
     - name: Run Tests
       run: |
