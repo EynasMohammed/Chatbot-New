@@ -29,7 +29,7 @@ echo "Creating the $TARGET_DB database..."
 psql "host=$DB_HOST port=5432 dbname=$DEFAULT_DB user=$DB_USERNAME password=$DB_PASSWORD sslmode=require" \
     -c "CREATE DATABASE $TARGET_DB;" 2>/dev/null || echo "Database '$TARGET_DB' already exists."
 
-# Step 2: Create the 'advanced_chats' table
+# Step 2: Create the 'advanced_chats' table in the 'TARGET_DB' database
 echo "Creating the 'advanced_chats' table in the $TARGET_DB database..."
 psql "host=$DB_HOST port=5432 dbname=$TARGET_DB user=$DB_USERNAME password=$DB_PASSWORD sslmode=require" \
     -c "CREATE TABLE IF NOT EXISTS advanced_chats (
