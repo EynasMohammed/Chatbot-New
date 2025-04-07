@@ -12,8 +12,8 @@ APP_DIR="$HOME_DIR/Chatbot-New"
 
 
 # Update code
-if [ -d "\$APP_DIR" ]; then
-    sudo -u azureuser bash -c "cd \$APP_DIR && git fetch origin && git reset --hard origin/$BRANCH"
+if [ -d "$APP_DIR" ]; then
+    sudo -u azureuser bash -c "cd $APP_DIR && git fetch origin && git reset --hard origin/$BRANCH"
 else
     sudo -u azureuser git clone -b "$BRANCH" "https://${GITHUB_TOKEN}@${REPO_URL}" "$APP_DIR"
 fi
