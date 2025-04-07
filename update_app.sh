@@ -7,7 +7,7 @@ echo "Updating Python application on VM..."
 REPO_URL="github.com/EynasMohammed/Chatbot-New.git"
 BRANCH="main"
 GITHUB_TOKEN=$TOKEN
-HOME_DIR=$(eval echo ~ $USER)
+HOME_DIR=$(eval echo ~$USER)
 APP_DIR="$HOME_DIR/Chatbot-New"
 
 
