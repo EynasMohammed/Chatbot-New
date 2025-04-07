@@ -7,7 +7,7 @@ echo "Updating Python application on VM..."
 REPO_URL="github.com/EynasMohammed/Chatbot-New.git"
 BRANCH="main"
 GITHUB_TOKEN=$TOKEN
-HOME_DIR=$("/home/azureuser")
+HOME_DIR=$(eval echo ~ $USER)
 APP_DIR="$HOME_DIR/Chatbot-New"
 
 
@@ -30,4 +30,4 @@ sudo systemctl is-active --quiet frontend || echo "Frontend failed to start"
 
 echo "Python application update completed!"
 EOF
-##
+#
