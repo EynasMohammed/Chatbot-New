@@ -155,11 +155,13 @@ with st.sidebar:
 
 # Main Content
 st.title("Chatbot Application")
-
 if st.session_state["current_chat"]:
     chat_id = st.session_state["current_chat"]
     chat_name = st.session_state["chat_names"][chat_id]
     st.subheader(f"Current Chat: {chat_name}")
+
+    # Use StreamingResponse to return
+    return StreamingResponse(stream_response(), media_type="text/plain")
 
     current_chat = next(
         (chat for chat in st.session_state["history_chats"] if chat["id"] == chat_id),

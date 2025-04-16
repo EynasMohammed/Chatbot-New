@@ -230,3 +230,18 @@
 [32mINFO[0m:     [19-03-2025 01:35:39] ::1:41095 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
 [36mDEBUG[0m:    [19-03-2025 01:35:39] Collection langchain already exists, returning existing collection.
 [32mINFO[0m:     [19-03-2025 01:35:39] ::1:41095 - "POST /api/v2/tenants/default_tenant/databases/default_database/collections HTTP/1.1" 200
+INFO:     [16-04-2025 15:55:54] Set chroma_server_nofile to 65535
+INFO:     [16-04-2025 15:55:54] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+DEBUG:    [16-04-2025 15:55:54] Starting component System
+DEBUG:    [16-04-2025 15:55:54] Starting component OpenTelemetryClient
+DEBUG:    [16-04-2025 15:55:54] Starting component SqliteDB
+DEBUG:    [16-04-2025 15:55:56] Starting component SimpleQuotaEnforcer
+DEBUG:    [16-04-2025 15:55:56] Starting component Posthog
+DEBUG:    [16-04-2025 15:55:56] Starting component SimpleRateLimitEnforcer
+DEBUG:    [16-04-2025 15:55:56] Starting component LocalSegmentManager
+DEBUG:    [16-04-2025 15:55:56] Starting component LocalExecutor
+DEBUG:    [16-04-2025 15:55:56] Starting component SegmentAPI
+INFO:     [16-04-2025 15:55:56] Started server process [6781]
+INFO:     [16-04-2025 15:55:56] Waiting for application startup.
+INFO:     [16-04-2025 15:55:56] Application startup complete.
+INFO:     [16-04-2025 15:55:56] Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
