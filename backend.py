@@ -351,7 +351,6 @@ async def rag_chat(request: RAGChatRequest):
                 yield chunk
 
     # Use StreamingResponse to return
-    #
     return StreamingResponse(stream_response(), media_type="text/plain")
 
 
