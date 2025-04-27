@@ -4,7 +4,6 @@
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 #
 # Secrets
-terraform/.terraform/
 terraform/terraform-azure
 terraform/terraform-azure.pub
 chroma_db/
