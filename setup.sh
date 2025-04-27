@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # Check if the correct number of arguments is provided
 if [ $# -ne 5 ]; then
     echo "Usage: $0 <PAT_token> <repo_url> <branch_name> <password> <DB_host>"
