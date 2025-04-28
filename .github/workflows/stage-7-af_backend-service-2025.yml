@@ -1,29 +1,3 @@
-# Stage 7 - Manual Deployment
-
-Based on the architecture of stage 6, we add 5 new resources to the infrastructure:
-
-- Azure Function App
-- Azure Application Insights
-- Azure App Service Plan
-- Azuer Storage Account
-- Azure Key Vault
-
-## Backend
-
-Make sure you have added the necessary environment variables to the Azure Function App settings and Azure Key Vault.
-
-The code of Azure Function App should be in a separate GitHub repository because it would be easier to manage the CI/CD pipeline.
-
-Add the system-assigned managed identity of the Azure Function App to the Key Vault access policy with get and list permissions for secrets.
-
-
-## CI/CD
-
-After developing the Azure Function App code, we need to deploy it using GitHub Actions. Go to the Azure console of the function app, under Deployment, click on Deployment Center, and select GitHub as the source control. Follow the steps to authorize GitHub and select the repository and branch to deploy.
-
-It creates a new GitHub Actions workflow file in the `.github/workflows` directory. The workflow might not work as expected, so we have to debug it. A common issue is the `module not found` error. To fix this, we need to add `--target=".python_packages/lib/site-packages"` to the `pip install` command in the GitHub Actions workflow file. Don't forget to add it to the zip command as well.
-
-```yaml
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure Functions: https://aka.ms/python-webapps-actions
@@ -75,7 +49,6 @@ jobs:
           path: |
             release.zip
 
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -95,9 +68,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F4CEAB06A1554B2FB0AC95869EFBC883 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_BF32BF4BCFDB4F99AE0608CEA3D5DD88 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_39722340F2C249749B97A7EEA13E8EC1 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_D31EDE26BD6D4A1391C44A451EF851EA }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_90E0A5392E9147188D6B82DEE7AFBB4C }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_C3C70ED0B816419CBE553DDB5599E4AD }}
 
       - name: Set Application Settings
         run: |
@@ -112,15 +85,4 @@ jobs:
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           scm-do-build-during-deployment: true
           enable-oryx-build: true
-```
-
-## Frontend
-
-After setting up the Azure Function App, we need to update the frontend to call the new function.
-
-Create a new VM in a separate resource group. In the VM, set up the Conda Python environment, set up the frontend and chromadb and test the application. Add the system-assigned managed identity of the VM to the Key Vault access policy with get and list permissions for secrets. If everything works, create a new image from the VM and delete the VM.
-
-Use the new image to create a VM in your main resource group. Don't forget to add the system-assigned managed identity of the VM to the Key Vault access policy too
-
-
-```
+          
