@@ -319,7 +319,7 @@ async def rag_chat(request: RAGChatRequest):
     #     "chat_history":chat_history,
     #     "input":user_input
     # })
-
+#
     chain = rag_chain.pick("answer")
 
     stream = chain.stream({
