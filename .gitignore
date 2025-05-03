@@ -9,7 +9,15 @@ chroma_db/
 pdf_store/
 chat_logs/
 .env
+terraform/.terraform
+terraform/ssh-keys
 
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+
+Chatbot-project
+Chatbot-project.pub
 # User-specific files
 *.rsuser
 *.suo
