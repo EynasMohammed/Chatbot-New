@@ -42,3 +42,12 @@ variable "environment" {
   description = "value"
   type = string
 }
+variable "ag_subnet_name" {
+  description = "Name of Application Gateway subnet"
+  type        = string
+}
+
+variable "ag_subnet_address" {
+  description = "Address prefix for Application Gateway subnet"
+  type        = list(string)
+}
