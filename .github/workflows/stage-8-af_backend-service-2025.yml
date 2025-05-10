@@ -1,8 +1,8 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure Functions: https://aka.ms/python-webapps-actions
-#
-name: Build and deploy Python project to Azure Function App - appstage777
+
+name: Build and deploy Python project to Azure Function App - backend-service-2025
 
 on:
   push:
@@ -68,13 +68,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_87968B52683D4B0D883061E5EEAC78FD }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_40FDBCFAACF1406FB4F3997F08F8188A }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0F5173D65CB34BBEA0B2B7906D6C833F }}
-        
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_FE9B6F012B4A4C12B29A514F0D8FDAD5 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_623397102CA54334A2796211C2E303C4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_09856AB128D44FCDBDF9E41D48CA598E }}
+
       - name: Set Application Settings
         run: |
-          az functionapp config appsettings set --name appstage777 --resource-group SDA-Stage7 --settings "FUNCTIONS_WORKER_RUNTIME=python" "KEY_VAULT_NAME=sdastage7" "APPINSIGHTS_INSTRUMENTATIONKEY=azurerm_application_insights.ai.instrumentation_key"
+         az functionapp config appsettings set --name appstage777 --resource-group SDA-Stage7 --settings "FUNCTIONS_WORKER_RUNTIME=python" "KEY_VAULT_NAME=sdastage7" "APPINSIGHTS_INSTRUMENTATIONKEY=azurerm_application_insights.ai.instrumentation_key"
+
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         id: deploy-to-function
