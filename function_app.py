@@ -19,7 +19,7 @@ from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 from azure.cosmos import CosmosClient, PartitionKey
 import chromadb
-
+#
 
 keyVaultName = os.environ.get("KEY_VAULT_NAME")
 KVUri = f"https://{keyVaultName}.vault.azure.net"
