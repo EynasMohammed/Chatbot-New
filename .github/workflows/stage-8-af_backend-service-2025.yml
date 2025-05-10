@@ -1,13 +1,13 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/azure/functions-action
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure Functions: https://aka.ms/python-webapps-actions
-#
+
 name: Build and deploy Python project to Azure Function App - backend-service-2025
 
 on:
   push:
     branches:
-      - stage-8-af
+      - stage-9-af
   workflow_dispatch:
 
 env:
@@ -68,19 +68,19 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_FE9B6F012B4A4C12B29A514F0D8FDAD5 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_623397102CA54334A2796211C2E303C4 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_09856AB128D44FCDBDF9E41D48CA598E }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F360B6AB8D6F4040837A16CB9925FEC3 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_37F693F684AF43AEB09119B22F318817 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_F805B2AB9F514CF2BCD3E190AA3B86CD }}
 
       - name: Set Application Settings
         run: |
-         az functionapp config appsettings set --appstage777 --resource-group SDA-Stage7 --settings "FUNCTIONS_WORKER_RUNTIME=python" "KEY_VAULT_NAME=sdastage7" "APPINSIGHTS_INSTRUMENTATIONKEY=azurerm_application_insights.ai.instrumentation_key"
+          az functionapp config appsettings set --name appstage777 --resource-group SDA-Stage7 --settings "COSMOSDB_CONNECTION_STRING=${{ secrets.COSMOSDB_CONNECTION_STRING }}" "FUNCTIONS_WORKER_RUNTIME=python" "KEY_VAULT_NAME=sdastage7" "APPINSIGHTS_INSTRUMENTATIONKEY=azurerm_application_insights.ai.instrumentation_key"
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
         id: deploy-to-function
         with:
-          app-name: 'backend-service-2025'
+          app-name: 'appstage777'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           scm-do-build-during-deployment: true

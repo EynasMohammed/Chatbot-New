@@ -19,12 +19,13 @@ from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 from azure.cosmos import CosmosClient, PartitionKey
 import chromadb
-#
 
 keyVaultName = os.environ.get("KEY_VAULT_NAME")
 KVUri = f"https://{keyVaultName}.vault.azure.net"
 credential = DefaultAzureCredential()
 kv_client = SecretClient(vault_url=KVUri, credential=credential)
+
+
 
 DB_NAME = kv_client.get_secret('PROJ-DB-NAME').value
 DB_USER = kv_client.get_secret('PROJ-DB-USER').value
@@ -36,10 +37,10 @@ AZURE_STORAGE_SAS_URL = kv_client.get_secret('PROJ-AZURE-STORAGE-SAS-URL').value
 AZURE_STORAGE_CONTAINER = kv_client.get_secret('PROJ-AZURE-STORAGE-CONTAINER').value
 CHROMADB_HOST = kv_client.get_secret('PROJ-CHROMADB-HOST').value
 CHROMADB_PORT = kv_client.get_secret('PROJ-CHROMADB-PORT').value
-COSMOS_ENDPOINT = kv_client.get_secret('PROJ-COSMOSDB-ENDPOINT').value
-COSMOS_KEY = kv_client.get_secret('PROJ-COSMOSDB-KEY').value
-COSMOS_DATABASE = kv_client.get_secret('PROJ-COSMOSDB-DATABASE').value
-COSMOS_CONTAINER = kv_client.get_secret('PROJ-COSMOSDB-CONTAINER').value
+cosmos_endpoint = kv_client.get_secret('PROJ-COSMOSDB-ENDPOINT').value
+cosmos_key = kv_client.get_secret('PROJ-COSMOSDB-KEY').value
+cosmos_database = kv_client.get_secret('PROJ-COSMOSDB-DATABASE').value
+cosmos_container = kv_client.get_secret('PROJ-COSMOSDB-CONTAINER').value
 
 chat_client = OpenAI(api_key=OPENAI_API_KEY)
 model = "gpt-3.5-turbo"
@@ -63,40 +64,13 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 
 @app.route(route="chat", methods=[func.HttpMethod.POST])
 def chat(req: func.HttpRequest) -> func.HttpResponse:
-    try:
-        logging.info(f"Received request: {req.get_body().decode()}")
-        
-        api_key = OPENAI_API_KEY
-        if not api_key:
-            logging.error("OPENAI_API_KEY is not set")
-            return func.HttpResponse("Server error: API key not configured", status_code=500)
-        client = OpenAI(api_key=api_key)
-        logging.info("OpenAI client initialized")
+    stream = chat_client.chat.completions.create(
+        model=model,
+        messages=req.get_json()['messages'],
+        # stream=True,
+    )
 
-        try:
-            data = req.get_json()
-        except ValueError as e:
-            logging.error(f"JSON parsing error: {str(e)}")
-            return func.HttpResponse("Invalid JSON payload", status_code=400)
-        
-        messages = data.get("messages")
-        if not messages:
-            logging.error("Missing 'messages' in payload")
-            return func.HttpResponse("Missing 'messages' in payload", status_code=400)
-        
-        model = "o3-mini" 
-        logging.info(f"Using model: {model}")
-
-        stream = client.chat.completions.create(
-            model=model,
-            messages=messages
-        )
-        logging.info("API call successful")
-        
-        return func.HttpResponse(stream.choices[0].message.content)
-    except Exception as e:
-        logging.error(f"Error in chat function: {str(e)}")
-        return func.HttpResponse(f"Internal server error: {str(e)}", status_code=500)
+    return func.HttpResponse(stream.choices[0].message.content)
 
 
 @app.route(route="load_chat", methods=[func.HttpMethod.GET])
@@ -113,9 +87,9 @@ async def load_chat(req: func.HttpRequest) -> func.HttpResponse:
             chat_id, name, pdf_name, pdf_path, pdf_uuid= row["id"], row["name"], row["pdf_name"], row["pdf_path"], row["pdf_uuid"]
 
             # Load from CosmosDB
-            client = CosmosClient(COSMOS_ENDPOINT, COSMOS_KEY)
-            database = client.get_database_client(COSMOS_DATABASE)
-            container = database.get_container_client(COSMOS_CONTAINER)
+            client = CosmosClient(cosmos_endpoint, cosmos_key)
+            database = client.get_database_client(cosmos_database)
+            container = database.get_container_client(cosmos_container)
 
             query = "SELECT * FROM c Where c.id = @chat_id"
             parameters = [{"name": "@chat_id", "value": chat_id}]
@@ -137,23 +111,24 @@ async def load_chat(req: func.HttpRequest) -> func.HttpResponse:
     
 
 @app.route(route="save_chat", methods=[func.HttpMethod.POST])
-async def save_chat(req: func.HttpRequest) -> func.HttpResponse:
+@app.cosmos_db_output(arg_name="chathistory", 
+                      database_name=cosmos_database,
+                      container_name=cosmos_container,
+                      create_if_not_exists=True,
+                      connection='COSMOSDB_CONNECTION_STRING')
+async def save_chat(req: func.HttpRequest, chathistory: func.Out[func.Document]) -> func.HttpResponse:
     db = psycopg2.connect(**DB_CONFIG)
     try:
         chat_id = req.get_json()["chat_id"]
 
         messages_data = json.dumps(req.get_json()["messages"], ensure_ascii=False, indent=4)
 
-        client = CosmosClient(COSMOS_ENDPOINT, COSMOS_KEY)
-        database = client.get_database_client(COSMOS_DATABASE)
-        container = database.get_container_client(COSMOS_CONTAINER)
-
         chat_data = {
             "id": chat_id,
             "messages": messages_data,
         }
 
-        container.upsert_item(chat_data)
+        chathistory.set(func.Document.from_dict(chat_data))
 
         # Insert or update database record
         with db.cursor() as cursor:
@@ -197,9 +172,9 @@ async def delete_chat(req: func.HttpRequest) -> func.HttpResponse:
         db.commit()
         db.close()
 
-        client = CosmosClient(COSMOS_ENDPOINT, COSMOS_KEY)
-        database = client.get_database_client(COSMOS_DATABASE)
-        container = database.get_container_client(COSMOS_CONTAINER)
+        client = CosmosClient(cosmos_endpoint, cosmos_key)
+        database = client.get_database_client(cosmos_database)
+        container = database.get_container_client(cosmos_container)
 
         container.delete_item(
             item=req.get_json()["chat_id"],           
@@ -355,4 +330,3 @@ def rag_chat(req: func.HttpRequest) -> func.HttpResponse:
     })
 
     return func.HttpResponse(response, status_code=200)
-    
