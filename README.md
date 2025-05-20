@@ -1,6 +1,6 @@
 # SDA-bootcamp-project
 
-Stage 4 - **RAG** Chatbot with Chat history
+- **RAG** Chatbot with Chat history
 
 A RAG chatbot using Streamlit and FastAPI. At this stage, we will add the RAG function to the bot.
 Other than creating normal chat, user can upload `pdf` file to the chatbot and ask questions specific to this document 
